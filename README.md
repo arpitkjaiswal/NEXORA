@@ -37,6 +37,13 @@ and download JSON reports.
 
 ## Deploy to Render
 
+[Deploy NEXORA using your Render account](https://render.com/deploy?repo=https://github.com/arpitkjaiswal/NEXORA)
+
+This opens Render's Blueprint setup for this repository. Sign in to Render,
+review the service and disk, and set the workspace password directly there.
+You do **not** need to give this agent a Render API key for this route. Keep any
+AI or private GitHub credentials in Render's environment settings.
+
 The repository contains a multi-stage Docker image, `render.yaml`, a deployment
 script, and GitHub Actions checks. The blueprint uses **Render's paid Starter
 plan with a 1 GB persistent disk**, in Singapore. Review current provider pricing
