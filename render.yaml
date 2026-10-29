@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: nexora
+    runtime: docker
+    plan: starter
+    region: singapore
+    branch: main
+    healthCheckPath: /api/health
+    autoDeployTrigger: checksPass
+    disk:
+      name: nexora-data
+      mountPath: /var/lib/nexora
+      sizeGB: 1
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: HOST
+        value: 0.0.0.0
+      - key: PORT
+        value: 10000
+      - key: NEXORA_DATA_DIR
+        value: /var/lib/nexora
+      - key: NEXORA_AUTH_PASSWORD
+        sync: false
